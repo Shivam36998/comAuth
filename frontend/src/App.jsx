@@ -1,34 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import NavbarBeforeLogin from './parts/NavbarBeforeLogin'
+import styled from 'styled-components'
+import Home from './pages/Home';
+import About from './pages/About';
+import Cat from './parts/Cat';
 
+const Project = styled.div`
+  background: url("/bg.png");
+  height: 100vh;
+  width: 100vw;
+  background-position: bottom;
+  background-size: cover;
+`;
+
+const Backdrop = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-color: #afafafa3;
+`
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Project>
+      <Backdrop>
+        <NavbarBeforeLogin/>
+        <Home/>
+        <Cat/>
+      </Backdrop>
+    </Project>
   )
 }
 
